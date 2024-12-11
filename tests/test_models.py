@@ -1,11 +1,12 @@
-import unittest
+
 
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
 from taxi.models import Manufacturer, Driver, Car
 
 
-class TestModels(unittest.TestCase):
+class TestModels(TestCase):
     def test_manufacturer_str(self):
         manufacturer = Manufacturer.objects.create(name="test",
                                                    country="test_country")
