@@ -55,7 +55,7 @@ class PrivateTest(TestCase):
         self.assertTemplateUsed(response, "taxi/driver_list.html")
 
     def test_retrieve_car(self):
-        Car.objects.create(name="test", country="test_country")
+        Car.objects.create(model="test_model")
         response = self.client.get(CAR_URL)
         self.assertEqual(response.status_code, 200)
         cars = Car.objects.all()
