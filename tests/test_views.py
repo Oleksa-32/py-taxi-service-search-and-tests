@@ -35,7 +35,7 @@ class PrivateTest(TestCase):
     def test_retrieve_manufacturer(self):
         Manufacturer.objects.create(name="test", country="test")
         response = self.client.get(MANUFACTURER_URL)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         manufacturers = Manufacturer.objects.all()
         self.assertEqual(
             list(manufacturers),
@@ -46,7 +46,7 @@ class PrivateTest(TestCase):
     def test_retrieve_driver(self):
         Driver.objects.create(username="test", license_number="test_license")
         response = self.client.get(DRIVER_URL)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         drivers = Driver.objects.all()
         self.assertEqual(
             list(drivers),

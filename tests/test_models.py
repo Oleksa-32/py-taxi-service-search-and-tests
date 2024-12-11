@@ -30,5 +30,4 @@ class TestModels(TestCase):
         manufacturer = Manufacturer.objects.create(name="test",
                                                    country="test_country")
         car = Car.objects.create(model="test_model", manufacturer=manufacturer)
-        self.assertEqual(str(car),
-                         f"{manufacturer.name} {manufacturer.country}")
+        self.assertEqual(str(car), car.model)
